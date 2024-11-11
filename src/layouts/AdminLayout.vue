@@ -23,7 +23,7 @@
 									<!--begin::Page title-->
 									<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
 										<!--begin::Title-->
-										<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Dark Sidebar</h1>
+										<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">{{  props?.title }}</h1>
 										<!--end::Title-->
 										<!--begin::Breadcrumb-->
 										<Breadcrumb />
@@ -31,11 +31,9 @@
 									</div>
 									<!--end::Page title-->
 									<!--begin::Actions-->
-									<div class="d-flex align-items-center gap-2 gap-lg-3">
-										<!--begin::Primary button-->
+									<!-- <div class="d-flex align-items-center gap-2 gap-lg-3">
 										<a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create</a>
-										<!--end::Primary button-->
-									</div>
+									</div> -->
 									<!--end::Actions-->
 								</div>
 								<!--end::Toolbar container-->
@@ -1732,18 +1730,7 @@
 		</div>
 		<!--end::Help drawer-->
 		<!--end::Engage drawers-->
-		<!--begin::Engage toolbar-->
-		<div class="engage-toolbar d-flex position-fixed px-5 fw-bold zindex-2 top-50 end-0 transform-90 mt-5 mt-lg-20 gap-2">
-			<!--begin::Demos drawer toggle-->
-			<button id="kt_engage_demos_toggle" class="engage-demos-toggle engage-btn btn shadow-sm fs-6 px-4 rounded-top-0" title="Check out 24 more demos" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-dismiss="click" data-bs-trigger="hover">
-				<span id="kt_engage_demos_label">Demos</span>
-			</button>
-			<!--end::Demos drawer toggle-->
-			<!--begin::Help drawer toggle-->
-			<button id="kt_help_toggle" class="engage-help-toggle btn engage-btn shadow-sm px-5 rounded-top-0" title="Learn & Get Inspired" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-dismiss="click" data-bs-trigger="hover">Help</button>
-			<!--end::Help drawer toggle-->
-		</div>
-		<!--end::Engage toolbar-->
+
 		<!--begin::Scrolltop-->
 		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
 			<!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
@@ -1768,4 +1755,11 @@ import Header from '../components/Header.vue'
 import Sidebar from '../components/Sidebar.vue'
 import Breadcrumb from '../components/Breadcrumb.vue'
 import Footer from '../components/Footer.vue'
+const props = defineProps({
+	title: {
+    	type: String,
+    	default: 'Default Title',
+		required: false
+  	},
+});
 </script>
